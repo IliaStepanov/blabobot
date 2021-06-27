@@ -48,7 +48,7 @@ public class MessageProcessor {
     public void respondDirect(String text, Message msg) {
         try {
             String rawText = text.replace(DIRECT.value, "");
-            int style = rawText.charAt(1);
+            int style = Integer.parseInt(String.valueOf(rawText.charAt(1)));
             String message = rawText.substring(3);
 
             if (!msg.getAuthor().getAsTag().equals("TalkyBot#2382")) {
