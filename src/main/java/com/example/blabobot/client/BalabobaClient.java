@@ -28,9 +28,9 @@ public class BalabobaClient {
     }
 
 
-    public String callBalaboba(String message) {
+    public String callBalaboba(String message, int type) {
 
-        String body = String.format("{\"query\":\"%s\",\"intro\":0,\"filter\":1}", message);
+        String body = String.format("{\"query\":\"%s\",\"intro\":%d,\"filter\":1}", message, type);
 
         String response = Objects.requireNonNull(webClient.post()
                 .uri(balabobaUrl)
