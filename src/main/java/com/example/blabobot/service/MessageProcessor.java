@@ -23,7 +23,7 @@ public class MessageProcessor {
         String usageMessage = "```Я умею(или нет) выполнять две команды: \n " +
                 "!usage чтобы увидеть это сообщение \n " +
                 "!blabla [стиль ответа] [твое сообщение] чтобы точно получить ответ \n " +
-                "Доступные стили:" +
+                "Доступные стили:\n" +
                 "0 Без стиля\n" +
                 "1 Теории заговора\n" +
                 "2 ТВ-Репортажи\n" +
@@ -37,7 +37,8 @@ public class MessageProcessor {
                 "10 Гороскоп\n" +
                 "11 Народные Мудрости\n" +
                 "Пример:" +
-                "!blabla 3 Вот бы сейчас попасть на море!```";
+                "!blabla 3 Вот бы сейчас попасть на море!\n\n" +
+                "В остальное время я отвечаю на случайные сообщения.```";
 
         if (!msg.getAuthor().getAsTag().equals("TalkyBot#2382")) {
             msg.reply(usageMessage).queue();
@@ -90,9 +91,5 @@ public class MessageProcessor {
             }
             return UNKNOWN;
         }
-    }
-
-    public static void main(String[] args) {
-        System.out.println(" 3 I want".substring(3));
     }
 }
