@@ -65,7 +65,7 @@ public class MessageProcessor {
 
             StringBuilder messageBuilder = new StringBuilder();
             for (int i = 1; i < split.length; i++) {
-                messageBuilder.append(split[i]);
+                messageBuilder.append(split[i]).append(" ");
             }
 
             if (!isaBotMessage(msg)) {
