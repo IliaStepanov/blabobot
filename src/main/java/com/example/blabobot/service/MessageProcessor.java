@@ -90,7 +90,7 @@ public class MessageProcessor {
         if (!isaBotMessage(msg) && (System.getProperty("alwaysRespond").equals("true") || rollResponse())) {
 
             int[] allowedStyles = getAllowedStyles(msg);
-            msg.reply(balabobaClient.callBalaboba(text, allowedStyles[r.nextInt(allowedStyles.length - 1)])).queue();
+            msg.reply(balabobaClient.callBalaboba(text, allowedStyles[r.nextInt(allowedStyles.length)])).queue();
         }
     }
 

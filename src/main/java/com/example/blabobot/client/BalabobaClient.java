@@ -20,7 +20,7 @@ public class BalabobaClient {
     private final ObjectMapper objectMapper;
     private final WebClient webClient;
 
-    public BalabobaClient(@Value("${balaboba-url}")String balabobaUrl, ObjectMapper objectMapper) {
+    public BalabobaClient(@Value("${balaboba-url}") String balabobaUrl, ObjectMapper objectMapper) {
         this.balabobaUrl = balabobaUrl;
         this.objectMapper = objectMapper;
 
@@ -48,6 +48,10 @@ public class BalabobaClient {
             e.printStackTrace();
         }
 
-        return Objects.requireNonNull(jsonNode).get("text").asText();
+        String s = Objects.requireNonNull(jsonNode).get("text").asText();
+        if (s == null || s.isEmpty()) {
+            s = "На это мне нечего ответить.";
+        }
+        return s;
     }
 }
